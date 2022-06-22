@@ -1,0 +1,8 @@
+.logo {
+    width: 21vw;
+    max-width: 108px;
+  
+    @include respond(mobile) {
+      width: 755px;
+    }
+  }

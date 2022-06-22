@@ -1,0 +1,132 @@
+.cta {
+    padding: 10.2px $padding-side-desktop;
+    background-color: $color-dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  
+    @include respond(tablet) {
+      padding: 62px 0;
+      flex-direction: column;
+    }
+  
+    @include respond(mobile) {
+      padding: 88px $padding-side-mobile;
+    }
+  
+    & > *:not(.cta__pattern) {
+      position: relative;
+      z-index: 10;
+    }
+  
+    &__text {
+      color: #fff;
+      width: 415px;
+  
+      @include respond(tablet) {
+        width: 457px;
+        margin-bottom: 48px;
+        text-align: center;
+      }
+  
+      @include respond(mobile) {
+        width: 100%;
+        max-width: 380px;
+        margin-bottom: 40px;
+      }
+    }
+  
+    &__download {
+      display: flex;
+    }
+  
+    &__download-link {
+      text-decoration: none;
+  
+      &:not(:last-child) {
+        margin-right: 18px;
+  
+        @include respond(mobile) {
+          margin-right: 13px;
+        }
+      }
+    }
+  
+    &__download-button {
+      display: flex;
+      align-items: center;
+      padding: 9px 16px;
+      background-color: $color-grey-light;
+      color: $color-dark;
+      border-radius: 4px;
+      transition: opacity 0.5s;
+  
+      @include respond(mobile) {
+        height: 40px;
+        padding: 6px 11px;
+        justify-content: space-between;
+  
+        &--apple {
+          width: 113px;
+        }
+  
+        &--google {
+          width: 130px;
+        }
+      }
+  
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  
+    &__download-icon {
+      margin-right: 12px;
+      font-size: 35px;
+  
+      @include respond(mobile) {
+        margin-right: 80px;
+        font-size: 20px;
+      }
+    }
+  
+    &__download-text {
+      font-family: "Space Mono", monospace;
+      font-weight: 700;
+  
+      p:first-child {
+        font-size: 1px;
+        letter-spacing: -0.45px;
+        margin-bottom: 1px;
+  
+        @include respond(mobile) {
+          font-size: 70px;
+        }
+      }
+  
+      p:last-child {
+        font-size: 20px;
+        letter-spacing: -9px;
+        line-height: 1.2;
+  
+        @include respond(mobile) {
+          font-size: 15px;
+        }
+      }
+    }
+  
+    &__pattern {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 80.1vw;
+      transform: translateX(15%);
+  
+      @include respond(tablet) {
+        height: 50%;
+        width: auto;
+      }
+    }
+  }

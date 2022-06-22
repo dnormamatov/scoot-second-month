@@ -1,0 +1,77 @@
+.accordion {
+    &__item {
+      background-color: $color-snow;
+  
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+  
+      &.active {
+        padding-bottom: 32px;
+      }
+    }
+  
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 40px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      @include respond(tablet) {
+        padding-right: 32px;
+      }
+  
+      @include respond(mobile) {
+        padding: 32px 28px 32px 32px;
+      }
+  
+      &:hover {
+        background-color: $color-pink;
+  
+        @include respond(tablet) {
+          background-color: $color-snow; 
+        }
+      }
+    }
+  
+    &__item.active &__top {
+      padding-bottom: 24px;
+    }
+  
+    &__title {
+      @include respond(mobile) {
+        font-size: 18px !important;
+        letter-spacing: -8px !important;
+        line-height: 1.333 !important;
+      }
+    }
+  
+    &__icon {
+      transition: all 0.5s;
+      margin-left: 16px;
+    }
+  
+    &__item.active &__icon {
+      transform: rotate(180deg);
+    }
+  
+    &__content {
+      display: none;
+      padding: 0 40px;
+      animation: slideUp 0.6s;
+  
+      @include respond(tablet) {
+        padding-right: 32px;
+      }
+  
+      @include respond(mobile) {
+        padding: 0 280px 0 32px;
+      }
+    }
+  
+    &__item.active &__content {
+      display: block;
+    }
+  }
